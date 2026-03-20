@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import NavBtn from '../ui/NavBtn'
+import LanguageToggle from '../ui/LanguageToggle'
 
 
 const NavItems = [
@@ -12,20 +13,22 @@ const NavItems = [
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between px-8 py-4">
-      <Image src="/assets/cozy_nest_logo.png" alt='Logo Image of Cozy Nest COmpany' width={200} height={200}/>
-      <nav className='flex items-center justify-between w-full'>
+    <header className="flex items-center justify-between px-8 py-4 w-full">
+      <div className='flex shrink-0'>
+        <Image src="/assets/light_logo.png" alt='Logo Image of Cozy Nest COmpany' width={60} height={52} className='block dark:hidden'/>
+        <Image src="/assets/dark_logo.png" alt='Logo Image of Cozy Nest COmpany' width={60} height={52} className='hidden dark:block'/>
+      </div>
+      
+      <nav className='flex-1 flex items-center justify-center gap-8'>
        {
         NavItems.map((item, index) => (
           <NavBtn key={index} title={item.title} path={item.path}/>
         ))
        }
       </nav>
-      <div className='flex justify-between items-center'>
-        <button>
-          Eng
-        </button>
-        <div className='rounded-full bg-red-200'>
+      <div className='flex gap-6 items-center'>
+        <LanguageToggle/>
+        <div className='rounded-full bg-red-200 p-4'>
           Hello
         </div>
       </div>

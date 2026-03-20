@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>This is footer component</div>
+    <div className='mt-auto'>This is footer component</div>
   )
 }
 
