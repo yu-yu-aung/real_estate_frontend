@@ -1,19 +1,11 @@
-import React from 'react'
-import NavBtn from '../ui/NavBtn'
+
 import SocialIcons from '../ui/SocialIcons'
 import Image from 'next/image'
-
-const NavItems = [
-  {title: 'Rentals', path: '/rentals'}, 
-  {title: 'For Sale', path: '/for_sale'}, 
-  { title: 'Blogs', path: '/blogs' },
-  { title: 'About Us', path: '/about_us' },
-  { title: 'Privacy Policy', path: '/privacy_policy' },
-]
+import NavBar from '../ui/NavBar'
 
 const Footer = () => {
   return (
-    <footer className='mt-auto flex flex-col items-center pb-15 bg-primary gap-6'>
+    <footer className='mt-auto flex flex-col items-center pb-15 bg-cyan-300 text-primary dark:bg-cyan-800 dark:text-white gap-6'>
       <div className='flex justify-between items-center pb-6 pt-15 px-15 w-full'>
         <div className='flex flex-col items-start justify-start gap-4'>
           <div className='flex'>
@@ -24,13 +16,7 @@ const Footer = () => {
             just happy little homes
           </p>
         </div>
-        <nav className='flex-1 flex items-center justify-center gap-8'>
-        {
-          NavItems.map((item, index) => (
-            <NavBtn key={index} title={item.title} path={item.path}/>
-          ))
-        }
-        </nav>
+        <NavBar />
         <SocialIcons/>
       </div>
       <hr className='text-secondary w-4xl'/>

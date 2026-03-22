@@ -1,8 +1,12 @@
-'use client'; 
+'use client';
+import RegisterForm from "@/components/shared/RegisterForm";
 
 const Page = () => {
   return (
-    <div>This is register page</div>
+    <div className="w-full flex flex-col items-center justify-between px-auto z-20">
+      <RegisterForm/>
+    </div>
+    
   )
 }
 

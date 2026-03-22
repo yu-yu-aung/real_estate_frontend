@@ -3,7 +3,7 @@
 import { usePathname, useRouter } from "next/navigation";
 
 type Props = {
-  title: string; 
+  title: string;
   path: string; 
 };
 
@@ -16,7 +16,7 @@ const NavBtn = ({title, path}: Props) => {
 
   return (
     <button
-     className={`font-medium text-lg flex items-center justify-between capitalize ${isActive ? 'text-primary' : 'text-heading hover:text-primary'}`}
+     className={`font-medium text-lg flex items-center justify-between capitalize ${isActive ? 'text-primary' : 'text-heading hover:text-primary dark:hover:text-cyan-300'}`}
      onClick={() => router.push(path)} >
       {title} 
     </button>
