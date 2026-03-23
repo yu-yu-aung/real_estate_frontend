@@ -1,12 +1,12 @@
-import React from 'react'
+
 import SearchBar from './SearchBar'
 
 const HeroText = () => {
   return (
-    <div className='flex flex-col gap-4 items-start pr-15 pb-15'>
-      <h1>Discover Your 
-      happy little home</h1>
-      <p>
+    <div className='flex flex-col gap-4 items-start pr-15 pb-15 text-gray-800 '>
+      <h1 className='font-heading text-[64px] font-bold text-nowrap overflow-visible'>Discover Your <br/> 
+      Happy Little Home</h1>
+      <p className='font-body text-lg'>
         Discover rentals and homes for sale with us. We offer a wide range of properties and hassle-free browsing.
       </p>
       <SearchBar type='home'/>

@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 @import "tailwindcss";
+
 
 
 :root {
@@ -29,8 +31,8 @@
   --radius-4: 4px;
   --radius-12: 12px;
 
-  --font-geist-sans: "Inter", sans-serif;
-  --font-geist-mono: "Fira Code", monospace;
+  --font-heading: "Fredoka", sans-serif;
+  --font-body: "Inter", sans-serif;
 }
 
 @theme inline {
@@ -57,7 +59,11 @@
   /* Radius */
   --radius-sm: var(--radius-2);
   --radius-md: var(--radius-4);
-  --radius-lg: var(--radius-12);
+  --radius-lg: var(--radius-12); 
+
+  /* Font */
+  --font-sans: var(--font-body); 
+  --font-heading: var(--font-heading); 
 }
 
 @media (prefers-color-scheme: dark) {
