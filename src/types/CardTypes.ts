@@ -1,5 +1,6 @@
 export type CardTypes = {
-  variant: "horizontal" | "vertical"; 
+  id?: number;
+  variant?: "horizontal" | "vertical"; 
   imageUrl: string; 
   title: string; 
   price: number;

@@ -1,5 +1,6 @@
 import HeroSection from "@/components/ui/HeroSection";
 import RecentVisit from "@/components/ui/RecentVisit";
+import Recommand from "@/components/ui/Recommand";
 import StatesRegion from "@/components/ui/StatesRegion";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
         <HeroSection />
         <StatesRegion />
         <RecentVisit />
+        <Recommand/>
       </main>
     </div>
   );

@@ -47,8 +47,8 @@ const Card = ({variant, imageUrl, title, price, type, tags, address, facts}: Car
     return (
       <div className='flex rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.15)] bg-white'>
         
-        <div className='w-60 overflow-hidden rounded-l-xl'>
-          <Image src={imageUrl} alt="property" width={340} height={304} className='object-cover' />
+        <div className='w-68 overflow-hidden rounded-l-xl relative'>
+          <Image src={imageUrl} alt="property" fill className='object-cover' />
         </div>
 
         <div className='p-4 flex flex-col gap-3 w-full text-primary'>
