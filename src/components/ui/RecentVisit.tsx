@@ -1,6 +1,7 @@
 import React from 'react'
 import VisitCard from './VisitCard'
 import { id } from 'zod/locales'
+import Button from '../shared/Button'
 
 const recentVisits = [
   { 
@@ -48,7 +49,9 @@ const RecentVisit = () => {
           </div>
         ))}
       </div>
-      <button className='text-center px-8 py-4 border border-primary rounded-md mx-auto mb-15' >Load More</button>
+      <div className='mx-auto mb-15'>
+        <Button variant='ghost' text='Load More'/>
+      </div>
       <hr className='w-full text-gray-600'></hr>
     </section>
   )

@@ -17,8 +17,8 @@ const VisitCard = ({imageUrl, title, tags, address, facts}: VisitCardTypes) => {
     <div className='flex rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.15)] bg-white'>
 
       {/* Image section */}
-      <div className='rounded-l-xl overflow-hidden object-cover'>
-        <Image src={imageUrl} alt="Image of the property" width={240} height={202}/>
+      <div className='rounded-l-xl overflow-hidden object-cover w-60'>
+        <Image src={imageUrl} alt="Image of the property" width={240} height={202} className='object-cover'/>
       </div>
 
       <div className='p-4 flex flex-col gap-3'>
