@@ -1,8 +1,8 @@
 'use client'; 
 
 import Image from 'next/image'
-import LanguageToggle from '../ui/LanguageToggle'
-import NavBar from '../ui/NavBar'
+import LanguageToggle from '../ui/landing/LanguageToggle'
+import NavBar from '../ui/landing/NavBar'
 import useAuthStore from '@/stores/useAuthStore'
 import Link from 'next/link';
 

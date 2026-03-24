@@ -1,6 +1,6 @@
 import React from 'react'
-import Button from '../shared/Button'
-import Card from '../shared/Card'
+import Button from '../../shared/Button'
+import Card from '../../shared/Card'
 import { CardTypes } from '@/types/CardTypes'
 
 const recentVisits: CardTypes[] = [
@@ -46,19 +46,19 @@ const recentVisits: CardTypes[] = [
   }
 ] 
 
-const Recommand = () => {
+const RecentVisit = () => {
   return (
      <section className='flex flex-col gap-16 items-start w-full px-15 py-15'>
       <h3 className='capitalize font-heading font-semibold text-[48px]'>Recent Visits</h3>
-      <div className='grid grid-cols-4 gap-7.5 w-full'>
+      <div className='grid grid-cols-2 gap-7.5 w-full'>
         {recentVisits.map((v) => (
           <div  key={v.id} className='col-span-1'> 
 
-            <Card variant="vertical" title={v.title} type={v.type} price={v.price} imageUrl={v.imageUrl} tags={v.tags} facts={v.facts} address={v.address}/>
+            <Card variant="horizontal" title={v.title} type={v.type} price={v.price} imageUrl={v.imageUrl} tags={v.tags} facts={v.facts} address={v.address}/>
           </div>
         ))}
       </div>
-      <div className='ml-auto mb-15'>
+      <div className='mx-auto mb-15'>
         <Button variant='ghost' text='Load More'/>
       </div>
       <hr className='w-full text-gray-600'></hr>
@@ -66,4 +66,4 @@ const Recommand = () => {
   )
 }
 
-export default Recommand
+export default RecentVisit

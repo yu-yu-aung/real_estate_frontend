@@ -1,5 +1,4 @@
-
-import SearchBar from './SearchBar'
+import SearchBar from "@/components/shared/SearchBar"
 
 const HeroText = () => {
   return (

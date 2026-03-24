@@ -1,7 +1,7 @@
 
-import SocialIcons from '../ui/SocialIcons'
+import SocialIcons from '../ui/landing/SocialIcons'
 import Image from 'next/image'
-import NavBar from '../ui/NavBar'
+import NavBar from '../ui/landing/NavBar'
 
 const Footer = () => {
   return (

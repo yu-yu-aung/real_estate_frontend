@@ -1,7 +1,11 @@
-import HeroSection from "@/components/ui/HeroSection";
-import RecentVisit from "@/components/ui/RecentVisit";
-import Recommand from "@/components/ui/Recommand";
-import StatesRegion from "@/components/ui/StatesRegion";
+
+import RecentVisit from "@/components/ui/landing/RecentVisit";
+import Recommand from "@/components/ui/landing/RelatedSearch";
+import StatesRegion from "@/components/ui/landing/StatesRegion";
+import HeroSection from "@/components/ui/landing/HeroSection";
+import RelatedSearch from "@/components/ui/landing/RelatedSearch";
+import NewRent from "@/components/ui/landing/NewRent";
+import NewSale from "@/components/ui/landing/NewSale";
 
 export default function Home() {
   return (
@@ -10,7 +14,9 @@ export default function Home() {
         <HeroSection />
         <StatesRegion />
         <RecentVisit />
-        <Recommand/>
+        <RelatedSearch/>
+        <NewRent/>
+        <NewSale />
       </main>
     </div>
   );

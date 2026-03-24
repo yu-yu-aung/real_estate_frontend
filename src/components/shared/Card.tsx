@@ -45,21 +45,27 @@ const Card = ({variant, imageUrl, title, price, type, tags, address, facts}: Car
   // Horizontal Layout
   if (variant === "horizontal") {
     return (
-      <div className='flex rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.15)] bg-white'>
+      <div className='flex rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.15)] bg-white hover:bg-gray-200 transition-transform ease-in-out duration-200'>
         
         <div className='w-68 overflow-hidden rounded-l-xl relative'>
           <Image src={imageUrl} alt="property" fill className='object-cover' />
         </div>
 
         <div className='p-4 flex flex-col gap-3 w-full text-primary'>
+          
+          <div className='flex flex-col'>
           <div className='flex justify-between'>
-            <Price type={type} price={price}/>
+            <p className='text-sm line-clamp-2 text-tertiary'>{title}</p>
             
             <EllipsisVertical className='size-6' />
           </div>
-          <p className='text-sm line-clamp-2 text-tertiary'>{title}</p>
+          <Price type={type} price={price}/>
+        </div>
+        
+        <div className='flex flex-col'>
           <Tags tags={tags} />
           <Facts facts={facts} />
+        </div>
 
           <p className='underline text-sm line-clamp-2'>{address}</p>
         </div>
@@ -69,7 +75,7 @@ const Card = ({variant, imageUrl, title, price, type, tags, address, facts}: Car
 
   // Vertical Layout
   return (
-    <div className='flex flex-col rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.15)] bg-white'>
+    <div className='flex flex-col rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.15)] bg-white hover:bg-gray-200 transition-transform ease-in-out duration-200'>
       
       <div className='relative overflow-hidden rounded-t-xl'>
         <Image src={imageUrl} alt="property" width={338} height={240} className='object-cover' />
@@ -78,12 +84,17 @@ const Card = ({variant, imageUrl, title, price, type, tags, address, facts}: Car
         </button>
       </div>
 
-      <div className='p-4 flex flex-col gap-3 text-primary'>
-        <Price type={type} price={price}/>
-
-        <p className='text-sm line-clamp-2 text-tertiary'>{title}</p>
-        <Tags tags={tags} />
+      <div className='p-4 flex flex-col gap-4 text-primary'>
+        <div className='flex flex-col'>
+          <p className='text-sm line-clamp-2 text-tertiary'>{title}</p>
+          <Price type={type} price={price}/>
+        </div>
+        
+        <div className='flex flex-col'>
+          <Tags tags={tags} />
         <Facts facts={facts} />
+        </div>
+        
 
         <p className='underline text-sm line-clamp-2'>{address}</p>
       </div>
