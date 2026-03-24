@@ -6,6 +6,7 @@ import HeroSection from "@/components/ui/landing/HeroSection";
 import RelatedSearch from "@/components/ui/landing/RelatedSearch";
 import NewRent from "@/components/ui/landing/NewRent";
 import NewSale from "@/components/ui/landing/NewSale";
+import InsightSection from "@/components/ui/landing/InsightSection";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <RelatedSearch/>
         <NewRent/>
         <NewSale />
+        <InsightSection />
       </main>
     </div>
   );
