@@ -1,4 +1,5 @@
 import HeroSection from "@/components/ui/HeroSection";
+import RecentVisit from "@/components/ui/RecentVisit";
 import StatesRegion from "@/components/ui/StatesRegion";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
       <main className="flex min-h-screen w-full flex-col items-center justify-between">    
         <HeroSection />
         <StatesRegion />
+        <RecentVisit />
       </main>
     </div>
   );

@@ -5,7 +5,7 @@ import StateCard from './StateCard'
 
 const StatesRegion = () => {
   return (
-    <section className='flex flex-col gap-16 items-start w-full px-15 py-32'>
+    <section className='flex flex-col gap-16 items-start w-full px-15 py-15'>
       <h3 className='capitalize font-heading font-semibold text-[48px]'>Explore Our Rental Options <br/>
 by Regions & States</h3>
       <div className='flex flex-wrap gap-12 pb-15'>
