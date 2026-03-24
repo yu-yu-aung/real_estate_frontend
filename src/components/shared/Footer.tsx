@@ -19,7 +19,7 @@ const Footer = () => {
         <NavBar />
         <SocialIcons/>
       </div>
-      <hr className='text-secondary w-4xl'/>
+      <hr className='text-tertiary w-4xl'/>
       <p>Copyright 2025 &copy; CozyNest Inc.</p>
     </footer>
   )

@@ -61,7 +61,7 @@ const RecentVisit = () => {
       <div className='mx-auto mb-15'>
         <Button variant='ghost' text='Load More'/>
       </div>
-      <hr className='w-full text-gray-600'></hr>
+      <hr className='w-full text-tertiary'></hr>
     </section>
   )
 }

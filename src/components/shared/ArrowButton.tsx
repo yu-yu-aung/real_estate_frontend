@@ -12,10 +12,10 @@ const ArrowButton = () => {
   return ( 
     <div className='flex gap-16 w-full justify-end'>
       <button onClick={handleClick} className={baseStyle}>
-        <ChevronLeft className='size-6 '/>
+        <ChevronLeft className='size-8 '/>
       </button>
       <button onClick={handleClick} className={baseStyle}>
-        <ChevronRight className='size-6'/>
+        <ChevronRight className='size-8'/>
       </button>
     </div>
     

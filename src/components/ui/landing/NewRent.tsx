@@ -62,7 +62,7 @@ const NewRent = () => {
       <div className='ml-auto mb-15'>
         <ArrowButton/>
       </div>
-      <hr className='w-full text-gray-600'></hr>
+      <hr className='w-full text-tertiary'></hr>
     </section>
   )
 }

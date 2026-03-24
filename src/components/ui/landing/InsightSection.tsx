@@ -5,7 +5,8 @@ import React from 'react'
 
 const InsightSection = () => {
   return (
-    <section className='grid grid-cols-2 gap-8 overflow-hidden relative bg-gray-200 w-full h-164 my-15'>
+    <>
+      <section className='grid grid-cols-2 gap-8 overflow-hidden relative bg-gray-200 w-full h-164 my-15'>
       <div className='relative col-span-1 w-full h-147 overflow-visible'>
         <Image src='/assets/blog.png' alt='Picture of a laptop and an indoor plant' fill className='object-cover'/>
       </div>
@@ -17,8 +18,12 @@ const InsightSection = () => {
         </Link>
         
       </div>
-      <div className='size-75 absolute -bottom-37.5 -right-37.5 rounded-full bg-cyan-300'></div>
+      <div className='size-75 absolute -bottom-37.5 -right-37.5 rounded-full bg-cyan-300 mx-15'></div>
     </section>
+    
+    <hr className='w-7xl mx-auto text-tertiary my-7.5' />
+    </>
+    
   )
 }
 

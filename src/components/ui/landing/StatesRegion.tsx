@@ -13,7 +13,7 @@ by Regions & States</h3>
         <StateCard state={item.state} imageUrl={item.imageUrl} key={item.id} id={item.id}/>
       ))}
     </div>
-    <hr className='w-full text-gray-600'></hr>
+    <hr className='w-full text-tertiary'></hr>
     </section>
     
   )
