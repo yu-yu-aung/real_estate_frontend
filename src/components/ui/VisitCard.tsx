@@ -5,23 +5,23 @@ import React from 'react'
 
 type VisitCardTypes = {
   imageUrl: string; 
+  price: number;
   title: string; 
   tags: string[]; 
   address: string; 
   facts: string[];
-
 }
 
-const VisitCard = ({imageUrl, title, tags, address, facts}: VisitCardTypes) => {
+const VisitCard = ({imageUrl,price, title, tags, address, facts}: VisitCardTypes) => {
   return (
     <div className='flex rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.15)] bg-white'>
 
       {/* Image section */}
-      <div className='rounded-l-xl overflow-hidden object-cover w-60'>
+      <div className='rounded-l-xl overflow-hidden w-60'>
         <Image src={imageUrl} alt="Image of the property" width={240} height={202} className='object-cover'/>
       </div>
 
-      <div className='p-4 flex flex-col gap-3'>
+      <div className='p-4 flex flex-col gap-3 w-full'>
         {/* Text upper part */}
           <div className='flex flex-col gap-1 items-start w-full text-primary'>
             <div className='flex items-center justify-between w-full'>

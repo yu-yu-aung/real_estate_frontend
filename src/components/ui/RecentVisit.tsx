@@ -1,12 +1,14 @@
 import React from 'react'
-import VisitCard from './VisitCard'
-import { id } from 'zod/locales'
 import Button from '../shared/Button'
+import Card from '../shared/Card'
+import { CardTypes } from '@/types/CardTypes'
 
-const recentVisits = [
+const recentVisits: CardTypes[] | id:string  = [
   { 
     id: 1,
     title: "Villa For SlashSquare", 
+    price: 10000, 
+    type: "rent",
     imageUrl: "/assets/visit.png", 
     tags: ["Pyin Oo Lwin", "Villa", "Pet friendly"],
   address: "6th Quarter, Anawrahta street, PyinOoLwin, Mandalay",
@@ -15,6 +17,8 @@ const recentVisits = [
   { 
     id: 2,
     title: "Villa For SlashSquare", 
+    price: 1000,
+    type: "sale",
     imageUrl: "/assets/visit.png", 
     tags: ["Pyin Oo Lwin", "Villa", "Pet friendly"],
   address: "6th Quarter, Anawrahta street, PyinOoLwin, Mandalay",
@@ -23,6 +27,8 @@ const recentVisits = [
   { 
     id: 3,
     title: "Villa For SlashSquare", 
+    price: 10000,
+    type: "rent",
     imageUrl: "/assets/visit.png", 
     tags: ["Pyin Oo Lwin", "Villa", "Pet friendly"],
   address: "6th Quarter, Anawrahta street, PyinOoLwin, Mandalay",
@@ -31,12 +37,14 @@ const recentVisits = [
   { 
     id: 4,
     title: "Villa For SlashSquare", 
+    price: 100,
+    type: "sale",
     imageUrl: "/assets/visit.png", 
     tags: ["Pyin Oo Lwin", "Villa", "Pet friendly"],
   address: "6th Quarter, Anawrahta street, PyinOoLwin, Mandalay",
   facts: ["4 beds", "2 baths", "1650 sq-ft"],
   }
-]
+] 
 
 const RecentVisit = () => {
   return (
@@ -45,7 +53,8 @@ const RecentVisit = () => {
       <div className='grid grid-cols-2 gap-7.5 w-full'>
         {recentVisits.map((v) => (
           <div  key={v.id} className='col-span-1'> 
-            <VisitCard title={v.title} imageUrl={v.imageUrl} tags={v.tags} facts={v.facts} address={v.address}/>
+
+            <Card variant="horizontal" title={v.title} type={v.type} price={v.price} imageUrl={v.imageUrl} tags={v.tags} facts={v.facts} address={v.address}/>
           </div>
         ))}
       </div>
