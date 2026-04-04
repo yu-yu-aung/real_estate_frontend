@@ -1,5 +1,5 @@
 import React from 'react'
-import LogInHeader from '../ui/LogInHeader';
+import LogInHeader from '../ui/auth/LogInHeader';
 import { useForm } from 'react-hook-form'
 import { minLength } from 'zod';
 import { CircleX, Eye, X } from 'lucide-react';

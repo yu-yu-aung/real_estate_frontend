@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import LogInHeader from '../ui/LogInHeader'
+import LogInHeader from '../ui/auth/LogInHeader'
 
 
 const LogInForm = () => {

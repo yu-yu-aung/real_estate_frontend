@@ -1,6 +1,5 @@
 
 import RecentVisit from "@/components/ui/landing/RecentVisit";
-import Recommand from "@/components/ui/landing/RelatedSearch";
 import StatesRegion from "@/components/ui/landing/StatesRegion";
 import HeroSection from "@/components/ui/landing/HeroSection";
 import RelatedSearch from "@/components/ui/landing/RelatedSearch";

@@ -1,6 +1,6 @@
 import React, { Children } from 'react'
 import Header from '../shared/Header'
-import Footer from '../shared/Footer'
+import Footer from '../shared/MainFooter'
 
 type Props={
   children: React.ReactNode;

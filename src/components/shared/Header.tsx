@@ -12,7 +12,7 @@ const Header = () => {
   const isLoggedIn = useAuthStore((state) => state.isLoggedIn); 
 
   return (
-    <header className="flex items-center justify-between px-15 py-4 w-full sticky top-0 z-10 bg-white dark:bg-gray-900 shadow-sm">
+    <header className="flex items-center justify-between px-15 py-4 w-full sticky top-0 z-10 bg-background shadow-sm">
       <Link href='/' className='flex shrink-0'>
         <Image src="/assets/light_logo.png" alt='Logo Image of Cozy Nest COmpany' width={60} height={52} className='block dark:hidden'/>
         <Image src="/assets/dark_logo.png" alt='Logo Image of Cozy Nest COmpany' width={60} height={52} className='hidden dark:block'/>

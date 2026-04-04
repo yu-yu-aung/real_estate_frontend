@@ -2,7 +2,7 @@ import SearchBar from "@/components/shared/SearchBar"
 
 const HeroText = () => {
   return (
-    <div className='flex flex-col gap-4 items-start pr-15 pb-15 text-gray-800 '>
+    <div className='flex flex-col gap-4 items-start pr-15 pb-15 text-primary'>
       <h1 className='font-heading text-[64px] font-bold text-nowrap overflow-visible'>Discover Your <br/> 
       Happy Little Home</h1>
       <p className='font-body text-lg'>

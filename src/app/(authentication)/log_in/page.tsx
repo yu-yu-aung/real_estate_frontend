@@ -1,8 +1,12 @@
 'use client'; 
 
+import LogInForm from "@/components/shared/LogInForm"; 
+
 const Page = () => {
   return (
-    <div>This is log in page</div>
+    <div>
+      <LogInForm />
+    </div>
   )
 }
 
