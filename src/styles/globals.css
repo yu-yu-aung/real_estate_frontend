@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 @import "tailwindcss";
 
+/* =====================================================
+   ROOT TOKENS
+===================================================== */
 :root {
 
+  /* =========================
+     COLOR PALETTES
+  ========================= */
+
+  /* Deep Teal */
   --color-deep-teal-50: #E6F0F1;
   --color-deep-teal-100: #B0D2D5;
   --color-deep-teal-200: #8ABCC0;
@@ -14,107 +22,72 @@
   --color-deep-teal-800: #003C41;
   --color-deep-teal-900: #002E32;
 
-  --color-coral-clay-50: #FCF4F2;
-  --color-coral-clay-100: #F6DED5;
-  --color-coral-clay-200: #F2CEC1;
-  --color-coral-clay-300: #ECB8A5;
-  --color-coral-clay-400: #E8AA93;
+  /* Coral Clay */
   --color-coral-clay-500: #E29578;
-  --color-coral-clay-600: #CE886D;
-  --color-coral-clay-700: #A06A55;
-  --color-coral-clay-800: #7C5242;
-  --color-coral-clay-900: #5F3F32;
 
-  --color-midnight-teal-50: #E6EAEA;
-  --color-midnight-teal-100: #B1BEBF;
-  --color-midnight-teal-200: #8B9EA0;
-  --color-midnight-teal-300: #567274;
-  --color-midnight-teal-400: #355659;
+  /* Midnight Teal */
   --color-midnight-teal-500: #032C30;
-  --color-midnight-teal-600: #03282C;
-  --color-midnight-teal-700: #021F22;
-  --color-midnight-teal-800: #02181A;
   --color-midnight-teal-900: #011214;
 
+  /* Neutral */
   --color-neutral-50: #FDFDFD;
-  --color-neutral-100: #F8F8F8;
   --color-neutral-200: #F5F5F5;
   --color-neutral-300: #F0F0F0;
-  --color-neutral-400: #EDEDED;
   --color-neutral-500: #E9E9E9;
   --color-neutral-600: #D4D4D4;
   --color-neutral-700: #A5A5A5;
-  --color-neutral-800: #808080;
-  --color-neutral-900: #626262;
 
-  /* status color  */
-  --color-crimson-500: #DC3545;
-  --color-golden-yellow-500: #FFB020;
-  --color-lime-green-500: #4CAF50;
-  --color-steel-blue-500: #4C77AF;
+  /* Status */
+  --color-success-500: #4CAF50;
+  --color-warning-500: #FFB020;
+  --color-danger-500: #DC3545;
+  --color-info-500: #4C77AF;
 
-  /* Ash Grey */
-  --color-ash-5: rgba(38, 38, 38, 0.05);
-  --color-ash-10: rgba(38, 38, 38, 0.10);
-  --color-ash-15: rgba(38, 38, 38, 0.15);
-  --color-ash-20: rgba(38, 38, 38, 0.20);
-  --color-ash-25: rgba(38, 38, 38, 0.25);
-  --color-ash-30: rgba(38, 38, 38, 0.30);
-  --color-ash-35: rgba(38, 38, 38, 0.35);
-  --color-ash-40: rgba(38, 38, 38, 0.40);
-  --color-ash-45: rgba(38, 38, 38, 0.45);
-  --color-ash-50: rgba(38, 38, 38, 0.50);
+  /* =========================
+     BRAND TOKENS
+  ========================= */
+  --brand-primary: var(--color-deep-teal-500);
+  --brand-primary-hover: var(--color-deep-teal-300);
+  --brand-primary-pressed: var(--color-deep-teal-100);
 
+  --brand-secondary: var(--color-coral-clay-500);
+  --brand-accent: var(--color-deep-teal-50);
 
-  /* Brand */
-  --color-primary: var(--color-deep-teal-500);
-  --color-primary-hover: var(--color-deep-teal-300);
-  --color-primary-pressed: var(--color-deep-teal-100);
-
-  --color-secondary: var(--color-coral-clay-500);
-  --color-accent: var(--color-deep-teal-50);
-
-  /* Text */
+  /* =========================
+     TEXT TOKENS
+  ========================= */
   --text-primary: var(--color-midnight-teal-900);
   --text-secondary: var(--color-midnight-teal-500);
   --text-tertiary: var(--color-neutral-700);
   --text-disabled: var(--color-neutral-600);
-  --text-brand: var(--color-deep-teal-500);
+  --text-brand: var(--brand-primary);
 
-  /* Background */
+  /* =========================
+     BACKGROUND TOKENS
+  ========================= */
   --bg-primary: var(--color-neutral-50);
   --bg-surface: var(--color-neutral-200);
   --bg-surface-hover: var(--color-neutral-300);
   --bg-surface-pressed: var(--color-neutral-500);
-  --bg-overlay: var(--color-ash-25);
   --bg-elevated: var(--color-neutral-300);
 
-  /* Status */
-  --color-success: var(--color-lime-green-500);
-  --color-warning: var(--color-golden-yellow-500);
-  --color-danger: var(--color-crimson-500);
-  --color-info: var(--color-steel-blue-500);
+  /* =========================
+     BORDER TOKENS
+  ========================= */
+  --border-sm: var(--color-neutral-500);
+  --border-md: var(--color-neutral-600);
+  --border-lg: var(--color-neutral-700);
 
-  /* Borders / Divider */
-  --divider-sm: var(--color-neutral-500);
-  --divider-md: var(--color-neutral-600);
-  --divider-lg: var(--color-neutral-700);
+  /* =========================
+     RADIUS
+  ========================= */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
 
-  /* Shadows */
-  --shadow-sm: var(--color-ash-10);
-  --shadow-md: var(--color-ash-15);
-  --shadow-lg: var(--color-ash-25);
-  --shadow-xl: var(--color-ash-35);
-
-  /* Radius */
-  --radius-0: 0px;
-  --radius-2: 2px;
-  --radius-4: 4px;
-  --radius-8: 8px;
-  --radius-12: 12px;
-  --radius-16: 16px;
-
-  /* Typography */
+  /* =========================
+     TYPOGRAPHY
+  ========================= */
   --font-heading: "Fredoka", sans-serif;
   --font-body: "Inter", sans-serif;
 }
@@ -124,26 +97,7 @@
    TAILWIND THEME MAPPING
 ===================================================== */
 @theme inline {
-
-  /* Colors */
-  --color-primary: var(--color-primary);
-  --color-secondary: var(--color-secondary);
-  --color-accent: var(--color-accent);
-
-  --color-success: var(--color-success);
-  --color-warning: var(--color-warning);
-  --color-danger: var(--color-danger);
-  --color-info: var(--color-info);
-
-  --color-background: var(--bg-primary);
-  --color-surface: var(--bg-surface);
-
-  --text-primary: var(--text-primary);
-  --text-secondary: var(--text-secondary);
-
-
-  /* colors that are not named */ 
-  --color-deep-teal-50: #E6F0F1;
+   --color-deep-teal-50: #E6F0F1;
   --color-deep-teal-100: #B0D2D5;
   --color-deep-teal-200: #8ABCC0;
   --color-deep-teal-300: #549DA4;
@@ -154,36 +108,39 @@
   --color-deep-teal-800: #003C41;
   --color-deep-teal-900: #002E32;
 
-  --color-coral-clay-50: #FCF4F2;
-  --color-coral-clay-100: #F6DED5;
-  --color-coral-clay-200: #F2CEC1;
-  --color-coral-clay-300: #ECB8A5;
-  --color-coral-clay-400: #E8AA93;
-  --color-coral-clay-500: #E29578;
-  --color-coral-clay-600: #CE886D;
-  --color-coral-clay-700: #A06A55;
-  --color-coral-clay-800: #7C5242;
-  --color-coral-clay-900: #5F3F32;
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
 
-  --color-midnight-teal-50: #E6EAEA;
-  --color-midnight-teal-100: #B1BEBF;
-  --color-midnight-teal-200: #8B9EA0;
-  --color-midnight-teal-300: #567274;
-  --color-midnight-teal-400: #355659;
-  --color-midnight-teal-500: #032C30;
-  --color-midnight-teal-600: #03282C;
-  --color-midnight-teal-700: #021F22;
-  --color-midnight-teal-800: #02181A;
-  --color-midnight-teal-900: #011214;
+  --color-card: var(--bg-surface);
+  --color-card-foreground: var(--text-primary);
 
-  /* Radius */
-  --radius-sm: var(--radius-2);
-  --radius-md: var(--radius-4);
-  --radius-lg: var(--radius-12);
+  --color-popover: var(--bg-elevated);
+  --color-popover-foreground: var(--text-primary);
 
-  /* Fonts */
-  --font-sans: var(--font-body);
-  --font-heading: var(--font-heading);
+  --color-primary: var(--brand-primary);
+  --color-primary-foreground: var(--color-neutral-50);
+
+  --color-secondary: var(--brand-secondary);
+  --color-secondary-foreground: var(--color-neutral-50);
+
+  --color-muted: var(--bg-surface);
+  --color-muted-foreground: var(--text-secondary);
+
+  --color-accent: var(--brand-accent);
+  --color-accent-foreground: var(--text-primary);
+
+  --color-destructive: var(--color-danger-500);
+
+  --color-border: var(--border-sm);
+  --color-input: var(--border-md);
+  --color-ring: var(--brand-primary);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  
+  --font-sans: var(--font-body); 
+  --font-heading: var(--font-heading); 
 }
 
 
@@ -192,57 +149,23 @@
 ===================================================== */
 @media (prefers-color-scheme: dark) {
   :root {
-    /* =========================
-       BACKGROUND
-    ========================= */
-    --bg-primary: #0a0a0a;
-    --bg-surface: #121212;
+    --bg-primary: #0f0f10;
+    --bg-surface: #131313;
     --bg-surface-hover: #1a1a1a;
     --bg-surface-pressed: #262626;
     --bg-elevated: #1f1f1f;
-    --bg-overlay: rgba(0, 0, 0, 0.6);
 
-    /* =========================
-       TEXT
-    ========================= */
     --text-primary: #f0f0f0;
     --text-secondary: #cfcfcf;
     --text-tertiary: #a5a5a5;
     --text-disabled: #7a7a7a;
-    --text-brand: var(--color-deep-teal-300);
 
-    /* =========================
-       BRAND (slightly brighter in dark)
-    ========================= */
-    --color-primary: var(--color-deep-teal-300);
-    --color-primary-hover: var(--color-deep-teal-200);
-    --color-primary-pressed: var(--color-deep-teal-100);
+    --brand-primary: var(--color-deep-teal-300);
+    --brand-secondary: var(--color-coral-clay-500);
 
-    --color-secondary: var(--color-coral-clay-400);
-    --color-accent: var(--color-deep-teal-800);
-
-    /* =========================
-       BORDERS / DIVIDERS
-    ========================= */
-    --divider-sm: #2a2a2a;
-    --divider-md: #3a3a3a;
-    --divider-lg: #4a4a4a;
-
-    /* =========================
-       STATUS COLORS (slightly softened)
-    ========================= */
-    --color-success: #6BCB77;
-    --color-warning: #FFD166;
-    --color-danger: #FF6B6B;
-    --color-info: #5AA9E6;
-
-    /* =========================
-       SHADOWS (darker feel)
-    ========================= */
-    --shadow-sm: rgba(0, 0, 0, 0.4);
-    --shadow-md: rgba(0, 0, 0, 0.5);
-    --shadow-lg: rgba(0, 0, 0, 0.6);
-    --shadow-xl: rgba(0, 0, 0, 0.7);
+    --border-sm: #2a2a2a;
+    --border-md: #3a3a3a;
+    --border-lg: #4a4a4a;
   }
 }
 

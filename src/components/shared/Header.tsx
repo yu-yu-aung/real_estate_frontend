@@ -19,13 +19,13 @@ const Header = () => {
       </Link>
       
       <NavBar/>
-      <div className='flex gap-6 items-center'>
+      <div className='flex gap-6 items-center '>
         {!isLoggedIn && (
         <div className="flex gap-8">
-          <Link href="/register" className="px-4 py-2 bg-cyan-700 text-white hover:bg-cyan-900 hover:text-cyan-300 rounded-sm">
+          <Link href="/register" className="px-4 py-2 bg-primary text-accent hover:bg-deep-teal-800 hover:text-deep-teal-100-300 rounded-sm">
             Sign Up
           </Link>
-          <Link href="/log_in" className="px-4 py-2 bg-orange-300 text-white hover:bg-orange-500 hover:text-orange-300 rounded-sm">
+          <Link href="/log_in" className="px-4 py-2 bg-accent text-primary hover:bg-deep-teal-400 hover:text-secondary rounded-sm">
             Log In
           </Link>
        </div> 

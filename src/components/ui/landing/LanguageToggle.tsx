@@ -6,7 +6,7 @@ const LanguageToggle = () => {
   const [language, setLanguage] = useState<'eng' | 'mm'>('eng')
 
   return (
-    <div className='flex bg-secondary items-center justify-between rounded-4xl text-lg text-heading'>
+    <div className='flex bg-accent items-center justify-between rounded-4xl text-lg text-heading'>
       <button
         onClick={() => setLanguage('eng')}
         className={`${
