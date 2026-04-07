@@ -129,6 +129,8 @@
   --color-accent: var(--brand-accent);
   --color-accent-foreground: var(--text-primary);
 
+  --color-tertiary: var(--text-tertiary);
+
   --color-destructive: var(--color-danger-500);
 
   --color-border: var(--border-sm);

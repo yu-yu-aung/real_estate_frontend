@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "../../styles/globals.css";
-import Footer from "@/components/shared/Footer";
 
 export const metadata: Metadata = {
   title: "Cozy Nest-Real Estate Services",
@@ -16,7 +15,6 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-screen flex flex-col">
         {children}
-        <Footer/>
       </body>
     </html>
   );
