@@ -17,7 +17,7 @@ type FormValues = {
 };
 
 const errorStyle = 'text-red-700 text-[15px] font-medium text-start';
-const inputStyle = 'p-4 text-primary border border-input bg-card rounded-sm placeholder:text-tertiary placeholder:text-sm placeholder:font-normal w-full focus:outline-none focus:border-primary';
+const inputStyle = 'p-4 text-primary border border-input bg-card rounded-sm placeholder:text-text-tertiary placeholder:text-sm placeholder:font-normal w-full focus:outline-none focus:border-primary';
 
 type InputProps = { 
   label: string; 
@@ -31,7 +31,7 @@ type InputProps = {
 
 const InputField = ({label, type, name, register, rules, placeholder, error} : InputProps) => (
   <div className="flex flex-col items-start gap-1 mb-6 w-full">
-    <label className="text-sm font-normal text-primary">{label}</label>
+    <label className="text-sm font-normal text-deep-teal-900">{label}</label>
     <input 
       type={type} 
       {...register(name, rules)}
