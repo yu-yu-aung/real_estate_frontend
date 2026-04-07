@@ -1,6 +1,6 @@
 
-import RegisterForm from "@/components/shared/RegisterForm";
 import Image from "next/image";
+import RegisterForm from "../components/RegisterForm";
 
 const Page = () => {
   return (

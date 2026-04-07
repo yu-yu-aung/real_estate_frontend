@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import LogInHeader from '../ui/auth/LogInHeader';
+import LogInHeader from './LogInHeader';
 import { useForm } from 'react-hook-form'
 import { minLength } from 'zod';
 import { CircleX, Eye, X } from 'lucide-react';
@@ -17,7 +17,7 @@ type FormValues = {
 };
 
 const errorStyle = 'text-red-700 text-[15px] font-medium text-start';
-const inputStyle = 'p-4 text-primary border border-input bg-card rounded-sm placeholder:text-text-tertiary placeholder:text-sm placeholder:font-normal w-full focus:outline-none focus:border-primary';
+const inputStyle = 'p-4 text-text-primary border border-input bg-card rounded-sm placeholder:text-text-tertiary placeholder:text-sm placeholder:font-normal w-full focus:outline-none focus:border-primary';
 
 type InputProps = { 
   label: string; 
@@ -42,7 +42,7 @@ const InputField = ({label, type, name, register, rules, placeholder, error} : I
   </div>
 ); 
 
-const RegisterForm = () => {
+const LogInForm = () => {
 
   const { register, handleSubmit, reset, watch, formState: {errors}} = useForm<FormValues>({mode: "onChange"}); 
 
@@ -56,12 +56,12 @@ const RegisterForm = () => {
   return (
     <div className='bg-white flex flex-col gap-4 px-15 py-10 min-w-148'>
       <div className='flex flex-col'>
-        <Link href="/log_in" className='w-full flex justify-end text-primary font-bold underline underline-offset-2'>
-          Log in
+        <Link href="/register" className='w-full flex justify-end text-primary font-bold underline underline-offset-2'>
+          Sign up
         </Link>
         <LogInHeader 
-          heading='Welcome' 
-          body='Create your account to start exploring'
+          heading='Welcome Back' 
+          body='Glad to see you again. Please, log in to continue.'
         />
       </div>
       
@@ -71,25 +71,6 @@ const RegisterForm = () => {
           className='flex flex-col gap-6'
         >
           <div className='flex flex-col gap-4'>
-            <InputField 
-              label='Full Name' 
-              type='text' 
-              name='name' 
-              register={register}
-              rules={{
-                required: "Username is required", 
-                pattern: {
-                  value: /^[A-Za-z0-9_ ]+$/, 
-                  message: 'Only letters, numbers, underscores and spaces allowed',
-                }, 
-                minLength: {
-                  value: 2, 
-                  message: "Full name must be at least 2 characters", 
-                },
-              }} 
-              placeholder='Full Name'
-              error={errors.name?.message}
-            /> 
 
             <InputField 
               label='Email' 
@@ -123,34 +104,16 @@ const RegisterForm = () => {
                 placeholder='Password'
                 error={errors.password?.message}
               /> 
-              <Eye className='absolute size-6 text-primary top-10 right-4'/>
+              <Eye className='absolute size-6 text-text-primary top-10 right-4'/>
             </div>
             
-            <div className='relative'>
-              <InputField 
-                label='Confirm Password' 
-                type='password' 
-                name='confirm_password' 
-                register={register}
-                rules={{
-                  required: "Confirm Password is required", 
-                  validate: (value: string) => value === password || "Passwords do not match",          
-                }} 
-                placeholder='Confirm Password'
-                error={errors.confirm_password?.message}
-              /> 
-              <Eye className='absolute size-6 text-primary top-10 right-4'/>
-            </div>
+            <Link href='/forgot_password' className='underline text-primary font-bold capitalize underline-offset-2'>Forgot password?</Link>
           </div>
           
-
-          <div className='flex gap-2 items-center w-full'>
-            <input type='checkbox' name='check' required/>
-            <p className='text-body'>I agree to <span className='underline text-primary font-bold'>Terms & Policy</span></p>
-          </div>
+          
         
           <button type='submit' className='py-4 text-center rounded-sm bg-primary text-white w-full'>
-            Register
+            Log In
           </button>
         </form>
 
@@ -170,4 +133,4 @@ const RegisterForm = () => {
   )
 }
 
-export default RegisterForm
+export default LogInForm
