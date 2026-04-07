@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import "../../styles/globals.css";
+import "../styles/globals.css";
+import { Toaster } from "sonner";
+import ReactQueryProvider from "@/providers/ReactQueryProvider";
+
 
 export const metadata: Metadata = {
   title: "Cozy Nest-Real Estate Services",
@@ -14,7 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col">
-        {children}
+        <ReactQueryProvider>
+          <Toaster position="top-center" richColors closeButton/>
+          {children}
+        </ReactQueryProvider>
       </body>
     </html>
   );
