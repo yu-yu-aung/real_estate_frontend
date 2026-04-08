@@ -86,10 +86,10 @@ const recentVisits: CardTypes[] = [
   }
 ] 
 
-const RentalTable = () => {
+const ForSaleTable = () => {
   return (
      <section className='flex flex-col gap-7.5 items-start w-full mb-15'>
-      <h3 className='capitalize font-heading font-semibold text-[48px]'>Rental Options in Mandalay Region</h3>
+      <h3 className='capitalize font-heading font-semibold text-[48px]'>Real estate & homes for sale</h3>
       <div className='grid grid-cols-4 gap-7.5 w-full'>
         {recentVisits.map((v) => (
           <div  key={v.id} className='col-span-1'> 
@@ -105,4 +105,4 @@ const RentalTable = () => {
   )
 }
 
-export default RentalTable
+export default ForSaleTable
