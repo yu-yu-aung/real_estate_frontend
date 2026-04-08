@@ -43,7 +43,7 @@ const InputField = ({label, type, name, register, placeholder, error} : InputPro
 
 const RegisterForm = () => {
 
-  const { register, handleSubmit, reset, watch, formState: {errors}} = useForm<FormValues>({resolver: zodResolver(RegisterSchema), mode: "onChange"}); 
+  const { register, handleSubmit, reset, formState: {errors}} = useForm<FormValues>({resolver: zodResolver(RegisterSchema), mode: "onChange"}); 
   
   const { mutate, isPending } = useMutation(registerMutation); 
 
@@ -55,7 +55,8 @@ const RegisterForm = () => {
       onError: (error) => {
         console.error("Form error: ", error);
       }
-    }); 
+    });
+    console.log("user data: ", data);  
   }; 
 
   return (

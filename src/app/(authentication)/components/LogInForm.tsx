@@ -8,12 +8,14 @@ import { CircleX, Eye, X } from 'lucide-react';
 import { required } from 'zod/mini';
 import Link from 'next/link';
 import Image from 'next/image';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { LoginSchema } from '@/schemas/auth.schema';
+import { useMutation } from '@tanstack/react-query';
+import { loginMutation } from '../queries/useQueries';
 
 type FormValues = {
-  name: string; 
   email: string; 
   password: string; 
-  confirm_password: string;
 };
 
 const errorStyle = 'text-red-700 text-[15px] font-medium text-start';
@@ -24,17 +26,16 @@ type InputProps = {
   type: string; 
   name: keyof FormValues; 
   register: any; 
-  rules?: any; 
   placeholder: string;
   error?: string;
 }
 
-const InputField = ({label, type, name, register, rules, placeholder, error} : InputProps) => (
+const InputField = ({label, type, name, register, placeholder, error} : InputProps) => (
   <div className="flex flex-col items-start gap-1 mb-6 w-full">
     <label className="text-sm font-normal text-deep-teal-900">{label}</label>
     <input 
       type={type} 
-      {...register(name, rules)}
+      {...register(name)}
       placeholder={placeholder}
       className={inputStyle}
     />
@@ -44,14 +45,21 @@ const InputField = ({label, type, name, register, rules, placeholder, error} : I
 
 const LogInForm = () => {
 
-  const { register, handleSubmit, reset, watch, formState: {errors}} = useForm<FormValues>({mode: "onChange"}); 
+  const { register, handleSubmit, reset, watch, formState: {errors}} = useForm<FormValues>({resolver: zodResolver(LoginSchema), mode: "onChange"});  
+
+  const { mutate, isPending } = useMutation(loginMutation); 
 
   const onSubmit = (data: FormValues) => {
-    console.log("user data: ", data);
-    reset(); 
+    mutate(data, {
+      onSuccess: () => {
+        reset();
+      }, 
+      onError: (error) => {
+        console.error("Form error: ", error);
+      }
+    })
+    console.log("user data: ", data); 
   }; 
-
-  const password = watch('password'); 
 
   return (
     <div className='bg-white flex flex-col gap-4 px-15 py-10 min-w-148'>
@@ -77,13 +85,6 @@ const LogInForm = () => {
               type='email' 
               name='email' 
               register={register}
-              rules={{
-                required: "Email is required", 
-                pattern: {
-                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                  message: 'Invalid email address',
-                },          
-              }} 
               placeholder='Email'
               error={errors.email?.message}
             /> 
@@ -94,13 +95,6 @@ const LogInForm = () => {
                 type='password' 
                 name='password' 
                 register={register}
-                rules={{
-                  required: "Password is required", 
-                  minLength: {
-                    value: 8,
-                    message: 'Password must be at least 8 characters long',
-                  },          
-                }} 
                 placeholder='Password'
                 error={errors.password?.message}
               /> 
