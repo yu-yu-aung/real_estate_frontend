@@ -1,10 +1,12 @@
 import React from 'react'
+import BlogHero from '../components/BlogHero'
 
 const Page = () => {
   return (
-    <div>
+    <main>
+      <BlogHero />
       
-    </div>
+    </main>
   )
 }
 
