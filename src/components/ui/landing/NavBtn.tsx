@@ -16,7 +16,7 @@ const NavBtn = ({title, path}: Props) => {
 
   return (
     <button
-     className={`font-medium text-lg flex items-center justify-between capitalize ${isActive ? 'text-primary' : 'text-heading hover:text-primary dark:hover:text-cyan-300'}`}
+     className={`font-medium text-lg flex items-center justify-between capitalize ${isActive ? 'text-secondary' : 'text-heading hover:text-text-primary'}`}
      onClick={() => router.push(path)} >
       {title} 
     </button>

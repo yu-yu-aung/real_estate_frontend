@@ -79,13 +79,6 @@
   --border-lg: var(--color-neutral-700);
 
   /* =========================
-     RADIUS
-  ========================= */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-
-  /* =========================
      TYPOGRAPHY
   ========================= */
   --font-heading: "Fredoka", sans-serif;
@@ -138,10 +131,6 @@
   --color-border: var(--border-sm);
   --color-input: var(--border-md);
   --color-ring: var(--brand-primary);
-
-  --radius-sm: var(--radius-sm);
-  --radius-md: var(--radius-md);
-  --radius-lg: var(--radius-lg);
   
   --font-sans: var(--font-body); 
   --font-heading: var(--font-heading); 

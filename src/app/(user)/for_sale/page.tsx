@@ -1,8 +1,11 @@
+import SearchFilter from '@/components/shared/SearchFilter'
 import React from 'react'
 
 const Page = () => {
   return (
-    <div>This is for sale page</div>
+    <div className='w-full px-15'>
+      <SearchFilter/>
+    </div>
   )
 }
 
