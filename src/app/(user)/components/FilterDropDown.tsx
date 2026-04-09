@@ -1,6 +1,7 @@
 import { ChevronDown } from 'lucide-react'
 import React, { useState } from 'react'
 import { Range, getTrackBackground } from 'react-range';
+import CountBtn from './CountBtn';
 
 type Props = {
   showFilter: boolean; 
@@ -13,25 +14,28 @@ const MAX = 1000000;
 const FilterDropDown = ({showFilter, setShowFilter} : Props) => {
 
   const [values, setValues] = useState([100000, 500000]); 
+  const [showPrice, setShowPrice] = useState(false); 
+  const [showType, setShowType] = useState(false); 
+  const [showBed, setShowBed] = useState(false); 
 
-  const handlePriceRange = () => {
-
-  }
+  const [activeCount, setActiveCount ] = useState(0); 
 
   if (!showFilter) return null; 
   return (
-    <>
+    <> 
       {showFilter &&
-        <div className='flex flex-col gap-3 p-6 shadow-lg w-99 rounded-sm bg-card'>
+        <div className='flex flex-col gap-3 p-6 shadow-lg w-99 rounded-sm bg-background'>
 
           {/* price  */}
           <div className='border-b-2 border-input pb-6'>
-            <div className='flex justify-between'>
+            <div onClick={() => setShowPrice(!showPrice)} className='flex justify-between'>
               <p className='capitalize text-lg font-medium'>Price</p>
-              <ChevronDown className='size-6'/>
+              <ChevronDown className={`size-6 ${showPrice ? "rotate-180 transition-transform duration-200 ease-in-out" : "rotate-0 transition-transform duration-200 ease-in-out"}`}/>
             </div>
 
-            <div className='flex flex-col gap-4 w-full'>
+            {
+              showPrice && (
+                <div className='flex flex-col gap-4 w-full'>
               {/* Slider */}
               <Range
                 values={values}
@@ -86,14 +90,67 @@ const FilterDropDown = ({showFilter, setShowFilter} : Props) => {
                 </div>
               </div> 
 
-              <p className='underline underline-offset-2 text-lg font-medium text-end'>Remove mini and maxi price</p>
+              <p onClick={() => setValues([MIN, MAX])} className='underline underline-offset-2 text-lg font-medium text-end'>Remove mini and maxi price</p>
             </div>
-            
-            
-
-            
+              )
+            }
           </div>
+          
+          {/* House Type */} 
+          <div className='border-b-2 border-input pb-6'>
+            <div onClick={() => setShowType(!showType)} className='flex justify-between'>
+              <p className='capitalize text-lg font-medium'>House Type</p>
+              <ChevronDown className={`size-6 ${showType ? "rotate-180 transition-transform duration-200 ease-in-out" : "rotate-0 transition-transform duration-200 ease-in-out"}`}/>
+            </div>
 
+            {
+              showType && (
+                <div className='flex flex-col gap-4 w-full text-lg text-text-primary mt-4'>
+                  <div className='flex gap-2 justify-start items-center'>
+                    <input type='checkbox' value="house" className='bg-input'/> 
+                    <label>House</label>
+                  </div>
+                  <div className='flex gap-2 justify-start items-center'>
+                    <input type='checkbox' value="apartment"/> 
+                    <label>Apartment/Condo</label>
+                  </div>
+                  <div className='flex gap-2 justify-start items-center'>
+                    <input type='checkbox' value="townhouse"/> 
+                    <label>Townhouse</label>
+                  </div>
+                </div>
+              )
+            }
+          </div> 
+
+          {/* baths abd beds*/} 
+          <div className='border-b-2 border-input pb-6'>
+            <div onClick={() => setShowBed(!showBed)} className='flex justify-between'>
+              <p className='capitalize text-lg font-medium'>Beds &amp; Baths</p>
+              <ChevronDown className={`size-6 ${showBed ? "rotate-180 transition-transform duration-200 ease-in-out" : "rotate-0 transition-transform duration-200 ease-in-out"}`}/>
+            </div>
+
+            {
+              showBed && (
+                <div className='flex flex-col gap-4 w-full text-lg text-text-primary mt-4'>
+                  <div className='flex gap-2 justify-start items-center'>
+                    <label>House</label>
+                    <div>
+                      <CountBtn count={1} activeCount={activeCount} setActiveCount={setActiveCount}/>
+                    </div>
+                  </div>
+                  <div className='flex gap-2 justify-start items-center'>
+                    <input type='checkbox' value="apartment"/> 
+                    <label>Apartment/Condo</label>
+                  </div>
+                  <div className='flex gap-2 justify-start items-center'>
+                    <input type='checkbox' value="townhouse"/> 
+                    <label>Townhouse</label>
+                  </div>
+                </div>
+              )
+            }
+          </div>
 
           <div></div>
           <div></div>
