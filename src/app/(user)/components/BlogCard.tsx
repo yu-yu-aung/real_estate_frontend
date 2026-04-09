@@ -1,7 +1,12 @@
+'use client'
+
 import { Clock, Heart, SquareArrowOutUpRight } from 'lucide-react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation';
+
 
 type Props = {
+  id: number;
   imageUrl: string; 
   category: string; 
   title: string; 
@@ -9,9 +14,15 @@ type Props = {
   time: number;
 }
 
-const BlogCard = ({imageUrl, category, title, intro, time} : Props) => {
+const BlogCard = ({id, imageUrl, category, title, intro, time} : Props) => { 
+  const router = useRouter(); 
+
+  const handleClick = () => {
+    router.push(`/blogs/${id}`)
+  }
+
   return (
-    <div className='rounded-sm flex flex-col h-142.5 shadow-lg bg-card hover:bg-accent'>
+    <div onClick={handleClick} className='rounded-sm flex flex-col h-142.5 shadow-lg bg-card hover:bg-accent'>
       <Image src={imageUrl} alt='Cover Image of the Blog' width={560} height={279}/>
       <div className='flex flex-col gap-4 p-6 h-full'>
         <div className='flex justify-between'>

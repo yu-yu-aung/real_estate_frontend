@@ -55,7 +55,7 @@ const RelatedSearch = () => {
         {recentVisits.map((v) => (
           <div  key={v.id} className='col-span-1'> 
 
-            <Card variant="vertical" title={v.title} type={v.type} price={v.price} imageUrl={v.imageUrl} tags={v.tags} facts={v.facts} address={v.address}/>
+            <Card variant="vertical" title={v.title} type={v.type} price={v.price} imageUrl={v.imageUrl} tags={v.tags} facts={v.facts} address={v.address} id={v.id}/>
           </div>
         ))}
       </div>

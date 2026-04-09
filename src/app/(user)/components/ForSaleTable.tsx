@@ -11,8 +11,8 @@ const recentVisits: CardTypes[] = [
     type: "rent",
     imageUrl: "/assets/visit.png", 
     tags: ["Pyin Oo Lwin", "Villa", "Pet friendly"],
-  address: "6th Quarter, Anawrahta street, PyinOoLwin, Mandalay",
-  facts: ["4 beds", "2 baths", "1650 sq-ft"],
+    address: "6th Quarter, Anawrahta street, PyinOoLwin, Mandalay",
+    facts: ["4 beds", "2 baths", "1650 sq-ft"],
   }, 
   { 
     id: 2,
@@ -94,7 +94,7 @@ const ForSaleTable = () => {
         {recentVisits.map((v) => (
           <div  key={v.id} className='col-span-1'> 
 
-            <Card variant="vertical" title={v.title} type={v.type} price={v.price} imageUrl={v.imageUrl} tags={v.tags} facts={v.facts} address={v.address}/>
+            <Card variant="vertical" title={v.title} type={v.type} price={v.price} imageUrl={v.imageUrl} tags={v.tags} facts={v.facts} address={v.address} id={v.id}/>
           </div>
         ))}
       </div>

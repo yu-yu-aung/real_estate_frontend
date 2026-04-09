@@ -1,8 +1,9 @@
-
+"use client"
 
 import { CardTypes } from '@/types/CardTypes';
 import { EllipsisVertical } from 'lucide-react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import React from 'react'
 
 
@@ -41,11 +42,18 @@ const Price = ({type, price}: {type: 'rent' | 'sale'; price: number}) => (
   </h3>
 )
 
-const Card = ({variant, imageUrl, title, price, type, tags, address, facts}: CardTypes) => {
+const Card = ({id, variant, imageUrl, title, price, type, tags, address, facts}: CardTypes) => {
+
+  const router = useRouter(); 
+
+  const handleClick = () => {
+    console.log("id : ", id);
+    router.push(`/properties/${id}`);
+  }
   // Horizontal Layout
   if (variant === "horizontal") {
     return (
-      <div className='flex rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.15)] bg-white hover:bg-gray-200 transition-transform ease-in-out duration-200'>
+      <div onClick={handleClick} className='flex rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.15)] bg-white hover:bg-gray-200 transition-transform ease-in-out duration-200'>
         
         <div className='w-68 overflow-hidden rounded-l-xl relative'>
           <Image src={imageUrl} alt="property" fill className='object-cover' />
@@ -75,7 +83,7 @@ const Card = ({variant, imageUrl, title, price, type, tags, address, facts}: Car
 
   // Vertical Layout
   return (
-    <div className='flex flex-col rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.15)] bg-white hover:bg-gray-200 transition-transform ease-in-out duration-200'>
+    <div onClick={handleClick} className='flex flex-col rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.15)] bg-white hover:bg-gray-200 transition-transform ease-in-out duration-200'>
       
       <div className='relative overflow-hidden rounded-t-xl'>
         <Image src={imageUrl} alt="property" width={338} height={240} className='object-cover' />
