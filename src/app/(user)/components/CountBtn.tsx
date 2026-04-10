@@ -1,9 +1,9 @@
 import React from 'react'
 
 type Props = {
-  count: number;
-  activeCount: number; 
-  setActiveCount: (count: number) => void; 
+  count: string;
+  activeCount: string; 
+  setActiveCount: (count: string) => void; 
 }
 
 

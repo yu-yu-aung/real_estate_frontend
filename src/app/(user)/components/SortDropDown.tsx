@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 type Props = {
   showSort: boolean; 
@@ -15,7 +15,19 @@ const options = [
 
 const SortDropDown = ({showSort, setShowSort} : Props) => { 
 
+  const dropdownRef = useRef<HTMLDivElement>(null)
   const [selected, setSelected] = useState("default"); 
+
+  useEffect(() => {
+    const handleClickOutside = (e : MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setShowSort(false); 
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside); 
+    return () => document.removeEventListener("mousedown", handleClickOutside); 
+  }, [setShowSort]);
 
   const handleChange = (value: string) => {
     setSelected(value); 
@@ -26,10 +38,7 @@ const SortDropDown = ({showSort, setShowSort} : Props) => {
   if (!showSort) return null; 
 
   return (
-    <>
-      {
-        showSort && (
-          <div className='flex flex-col gap-3 p-4 bg-background shadow-lg'>
+      <div ref={dropdownRef} className='flex flex-col gap-3 p-4 bg-background shadow-lg'>
           {options.map((o) => (
             <label key={o.value} className='flex items-center gap-2 cursor-pointer text-text-primary'>
               <input 
@@ -43,11 +52,6 @@ const SortDropDown = ({showSort, setShowSort} : Props) => {
             </label>
           ))}
         </div>
-        )
-      }
-    </>
-    
-    
   )
 }
 
